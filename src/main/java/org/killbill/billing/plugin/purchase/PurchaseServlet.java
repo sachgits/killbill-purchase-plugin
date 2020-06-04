@@ -37,6 +37,6 @@ public class PurchaseServlet {
     @GET
     public void hello() {
         // Find me on http://127.0.0.1:8080/plugins/purchase-plugin
-        logger.info("Hello world from Purchase Tahseel Plugin");
+        logger.info("Logging  from Purchase Tahseel Plugin");
     }
 }

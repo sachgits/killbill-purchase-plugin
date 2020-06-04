@@ -91,7 +91,7 @@ public class PurchaseActivator extends KillbillActivatorBase {
     }
 
     private void registerHandlers() {
-        final PluginConfigurationEventHandler configHandler = new PluginConfigurationEventHandler(PurchaseConfigurationHandler);
+        final PluginConfigurationEventHandler configHandler = new PluginConfigurationEventHandler(purchaseConfigurationHandler);
 
         dispatcher.registerEventHandlers(configHandler,
                                          (OSGIFrameworkEventHandler) () -> dispatcher.registerEventHandlers(killbillEventHandler));

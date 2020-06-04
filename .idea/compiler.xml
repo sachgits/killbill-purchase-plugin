@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="hello-world-plugin" />
+        <module name="purchase-plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="hello-world-plugin" target="1.8" />
+      <module name="purchase-plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
