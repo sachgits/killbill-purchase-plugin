@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import java.util.Map;
 
@@ -24,7 +24,7 @@ import javax.annotation.Nullable;
 import org.killbill.billing.osgi.api.Healthcheck;
 import org.killbill.billing.tenant.api.Tenant;
 
-public class HelloWorldHealthcheck implements Healthcheck {
+public class PurchaseHealthcheck implements Healthcheck {
 
     @Override
     public HealthStatus getHealthStatus(@Nullable final Tenant tenant, @Nullable final Map properties) {

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.kill-bill.commons:killbill-clock:0.22.2">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/kill-bill/commons/killbill-clock/0.22.2/killbill-clock-0.22.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/kill-bill/commons/killbill-clock/0.22.2/killbill-clock-0.22.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/kill-bill/commons/killbill-clock/0.22.2/killbill-clock-0.22.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -39,12 +39,12 @@ import org.killbill.billing.util.entity.Pagination;
 //
 // A 'real' payment plugin would of course implement this interface.
 //
-public class HelloWorldPaymentPluginApi implements PaymentPluginApi {
+public class PurchasePaymentPluginApi implements PaymentPluginApi {
 
     private final Properties properties;
     private final OSGIKillbillLogService logService;
 
-    public HelloWorldPaymentPluginApi(final Properties properties, final OSGIKillbillLogService logService) {
+    public PurchasePaymentPluginApi(final Properties properties, final OSGIKillbillLogService logService) {
         this.properties = properties;
         this.logService = logService;
     }

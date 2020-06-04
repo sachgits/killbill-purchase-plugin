@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import java.util.Optional;
 
@@ -34,12 +34,12 @@ import com.google.inject.Inject;
 
 @Singleton
 @Path("/healthcheck")
-public class HelloWorldHealthcheckServlet extends PluginHealthcheck {
+public class PurchaseHealthcheckServlet extends PluginHealthcheck {
 
-    private final HelloWorldHealthcheck healthcheck;
+    private final PurchaseHealthcheck healthcheck;
 
     @Inject
-    public HelloWorldHealthcheckServlet(final HelloWorldHealthcheck healthcheck) {
+    public PurchaseHealthcheckServlet(final PurchaseHealthcheck healthcheck) {
         this.healthcheck = healthcheck;
     }
 

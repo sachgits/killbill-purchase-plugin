@@ -16,7 +16,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import java.util.Hashtable;
 import java.util.Properties;
@@ -36,14 +36,14 @@ import org.killbill.billing.plugin.core.resources.jooby.PluginApp;
 import org.killbill.billing.plugin.core.resources.jooby.PluginAppBuilder;
 import org.osgi.framework.BundleContext;
 
-public class HelloWorldActivator extends KillbillActivatorBase {
+public class PurchaseActivator extends KillbillActivatorBase {
 
     //
     // Ideally that string should match the pluginName on the filesystem, but there is no enforcement
     //
-    public static final String PLUGIN_NAME = "hello-world-plugin";
+    public static final String PLUGIN_NAME = "purchase-plugin";
 
-    private HelloWorldConfigurationHandler helloWorldConfigurationHandler;
+    private PurchaseConfigurationHandler purchaseConfigurationHandler;
     private OSGIKillbillEventDispatcher.OSGIKillbillEventHandler killbillEventHandler;
 
     @Override
@@ -53,19 +53,19 @@ public class HelloWorldActivator extends KillbillActivatorBase {
         final String region = PluginEnvironmentConfig.getRegion(configProperties.getProperties());
 
         // Register an event listener for plugin configuration (optional)
-        helloWorldConfigurationHandler = new HelloWorldConfigurationHandler(region, PLUGIN_NAME, killbillAPI, logService);
-        final Properties globalConfiguration = helloWorldConfigurationHandler.createConfigurable(configProperties.getProperties());
-        helloWorldConfigurationHandler.setDefaultConfigurable(globalConfiguration);
+        purchaseConfigurationHandler = new PurchaseConfigurationHandler(region, PLUGIN_NAME, killbillAPI, logService);
+        final Properties globalConfiguration = purchaseConfigurationHandler.createConfigurable(configProperties.getProperties());
+        purchaseConfigurationHandler.setDefaultConfigurable(globalConfiguration);
 
         // Register an event listener (optional)
-        killbillEventHandler = new HelloWorldListener(killbillAPI);
+        killbillEventHandler = new PurchaseListener(killbillAPI);
 
         // As an example, this plugin registers a PaymentPluginApi (this could be changed to any other plugin api)
-        final PaymentPluginApi paymentPluginApi = new HelloWorldPaymentPluginApi(configProperties.getProperties(), logService);
+        final PaymentPluginApi paymentPluginApi = new PurchasePaymentPluginApi(configProperties.getProperties(), logService);
         registerPaymentPluginApi(context, paymentPluginApi);
 
         // Expose a healthcheck (optional), so other plugins can check on the plugin status
-        final Healthcheck healthcheck = new HelloWorldHealthcheck();
+        final Healthcheck healthcheck = new PurchaseHealthcheck();
         registerHealthcheck(context, healthcheck);
 
         // Register a servlet (optional)
@@ -74,8 +74,8 @@ public class HelloWorldActivator extends KillbillActivatorBase {
                                                          logService,
                                                          dataSource,
                                                          super.clock,
-                                                         configProperties).withRouteClass(HelloWorldServlet.class)
-                                                                          .withRouteClass(HelloWorldHealthcheckServlet.class)
+                                                         configProperties).withRouteClass(PurchaseServlet.class)
+                                                                          .withRouteClass(PurchaseHealthcheckServlet.class)
                                                                           .withService(healthcheck)
                                                                           .build();
         final HttpServlet httpServlet = PluginApp.createServlet(pluginApp);
@@ -91,7 +91,7 @@ public class HelloWorldActivator extends KillbillActivatorBase {
     }
 
     private void registerHandlers() {
-        final PluginConfigurationEventHandler configHandler = new PluginConfigurationEventHandler(helloWorldConfigurationHandler);
+        final PluginConfigurationEventHandler configHandler = new PluginConfigurationEventHandler(PurchaseConfigurationHandler);
 
         dispatcher.registerEventHandlers(configHandler,
                                          (OSGIFrameworkEventHandler) () -> dispatcher.registerEventHandlers(killbillEventHandler));

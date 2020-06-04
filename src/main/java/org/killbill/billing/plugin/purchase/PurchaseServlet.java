@@ -16,7 +16,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import javax.inject.Singleton;
 
@@ -27,16 +27,16 @@ import org.slf4j.LoggerFactory;
 
 @Singleton
 @Path("/")
-public class HelloWorldServlet {
+public class PurchaseServlet {
 
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldServlet.class);
+    private static final Logger logger = LoggerFactory.getLogger(PurchaseServlet.class);
 
-    public HelloWorldServlet() {
+    public PurchaseServlet() {
     }
 
     @GET
     public void hello() {
-        // Find me on http://127.0.0.1:8080/plugins/hello-world-plugin
-        logger.info("Hello world");
+        // Find me on http://127.0.0.1:8080/plugins/purchase-plugin
+        logger.info("Hello world from Purchase Tahseel Plugin");
     }
 }

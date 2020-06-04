@@ -15,7 +15,7 @@
  * under the License.
  */
 
-package org.killbill.billing.plugin.helloworld;
+package org.killbill.billing.plugin.purchase;
 
 import java.util.Properties;
 
@@ -38,17 +38,17 @@ import org.slf4j.LoggerFactory;
  *      -H "X-Killbill-CreatedBy: demo" \
  *      -d 'key1=foo1
  * key2=foo2' \
- *      "http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginConfig/hello-world-plugin"
+ *      "http://127.0.0.1:8080/1.0/kb/tenants/uploadPluginConfig/purchase-plugin"
  * }
  * </pre>
  */
-public class HelloWorldConfigurationHandler extends PluginTenantConfigurableConfigurationHandler<Properties> {
+public class PurchaseConfigurationHandler extends PluginTenantConfigurableConfigurationHandler<Properties> {
 
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldConfigurationHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(PurchaseConfigurationHandler.class);
 
     private final String region;
 
-    public HelloWorldConfigurationHandler(final String region,
+    public PurchaseConfigurationHandler(final String region,
                                           final String pluginName,
                                           final OSGIKillbillAPI osgiKillbillAPI,
                                           final OSGIKillbillLogService osgiKillbillLogService) {
