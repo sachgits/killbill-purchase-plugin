@@ -25,7 +25,7 @@
         <version>0.142.6</version>
     </parent>
     <groupId>org.kill-bill.billing.plugin.java</groupId>
-    <artifactId>hello-world-plugin</artifactId>
+    <artifactId>purchase-plugin</artifactId>
     <name>Kill Bill OSGI Purchase bundle</name>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>bundle</packaging>
@@ -174,7 +174,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Activator>org.killbill.billing.plugin.purchase.PurchaseWorldActivator</Bundle-Activator>
+                        <Bundle-Activator>org.killbill.billing.plugin.purchase.PurchaseActivator</Bundle-Activator>
                         <Export-Package>
                             org.killbill.billing.plugin.service
                         </Export-Package>

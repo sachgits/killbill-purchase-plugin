@@ -1,7 +1,7 @@
-killbill-hello-world-java-plugin
+Purchase Tahseel java-plugin
 ================================
 
-Hello World Kill Bill plugin in Java. It shows how to:
+Purchase Kill Bill plugin in Java. It shows how to:
 
 * Build an OSGI plugin using Maven
 * Listen to Kill Bill events
