@@ -35,6 +35,7 @@ import org.killbill.billing.plugin.core.config.PluginEnvironmentConfig;
 import org.killbill.billing.plugin.core.resources.jooby.PluginApp;
 import org.killbill.billing.plugin.core.resources.jooby.PluginAppBuilder;
 import org.osgi.framework.BundleContext;
+import org.killbill.billing.plugin.purchase.*;
 
 public class PurchaseActivator extends KillbillActivatorBase {
 
@@ -75,6 +76,7 @@ public class PurchaseActivator extends KillbillActivatorBase {
                                                          dataSource,
                                                          super.clock,
                                                          configProperties).withRouteClass(PurchaseServlet.class)
+                                                                         .withRouteClass(ConfirmationServlet.class)
                                                                           .withRouteClass(PurchaseHealthcheckServlet.class)
                                                                           .withService(healthcheck)
                                                                           .build();
